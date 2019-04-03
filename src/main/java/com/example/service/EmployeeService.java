@@ -7,6 +7,7 @@ import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -78,6 +79,6 @@ public class EmployeeService {
     }
 
     private static Timestamp getTimeStampNow() {
-        return new Timestamp(System.currentTimeMillis());
+        return Timestamp.valueOf(LocalDateTime.now());
     }
 }

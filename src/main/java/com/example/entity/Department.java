@@ -38,4 +38,38 @@ public class Department {
     public void setName(String name) {
         this.name = name;
     }
+
+
+    public static final class Builder {
+        private Long id;
+        private String number;
+        private String name;
+
+        private Builder() {}
+
+        public static Builder create() { return new Builder(); }
+
+        public Builder id(Long id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder number(String number) {
+            this.number = number;
+            return this;
+        }
+
+        public Builder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Department build() {
+            Department department = new Department();
+            department.setId(id);
+            department.setNumber(number);
+            department.setName(name);
+            return department;
+        }
+    }
 }
